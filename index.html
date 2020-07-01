@@ -48,3 +48,151 @@
     <div class="card__name">John Doe</div>
   </div>
 </div>
+
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #666;
+}
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 300px;
+  width: 90%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /*   border: 1px solid #fff; */
+  cursor: pointer;
+  scroll-behavior: smooth;
+}
+
+.arrowNext {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translatey(-50%);
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30px;
+  color: #fff;
+  user-select: none;
+  background-color: grey;
+  border-radius: 50%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.arrowPrev {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 30px;
+  top: 50%;
+  transform: translatey(-50%);
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30px;
+  color: #fff;
+  user-select: none;
+  background-color: grey;
+  border-radius: 50%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+.cardFirst {
+  position: relative;
+  width: 210px;
+  height: 270px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 25px 0 10px;
+  background-color: #666;
+}
+.cardFirst__img {
+  border-radius: 10px 10px 0 0;
+}
+.cardFirst__add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  background-color: skyblue;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translatex(-50%);
+  border: 4px solid #666;
+}
+.card,
+.cardFirst {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+}
+.card {
+  position: relative;
+  width: 210px;
+  height: 270px;
+  border-radius: 10px;
+}
+.card:not(:last-child) {
+  margin-right: 25px;
+}
+.card__img {
+  border-radius: 10px;
+}
+.card__name {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translatex(-50%);
+  font-size: 20px;
+  z-index: 10;
+  color: #fff;
+}
+.card__user {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 15px inset #212121;
+  border: 4px solid blue;
+}
+
+</style>
+
+<script>
+let arrowNext = document.querySelector('.arrowNext');
+let arrowPrev = document.querySelector('.arrowPrev');
+let container = document.querySelector('.container');
+
+arrowNext.addEventListener('click', () => {
+  container.scrollTo(container.scrollLeft  + 200,0);
+});
+arrowPrev.addEventListener('click', () => {
+  container.scrollTo(container.scrollLeft  - 200,0);
+});
